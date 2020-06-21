@@ -50,7 +50,7 @@ class XPath extends \DOMXPath
      */
     protected function getRootElements()
     {
-        $rootElements = [];
+        $rootElements = array();
         $elements = $this->document->getElementsByTagName('svg');
         /** @var \DOMElement $element */
         foreach ($elements as $element) {

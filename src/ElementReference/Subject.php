@@ -11,12 +11,12 @@ class Subject
     /**
      * @var Usage[]
      */
-    protected $useCollection = [];
+    protected $useCollection = array();
 
     /**
      * @var Usage[]
      */
-    protected $usedInCollection = [];
+    protected $usedInCollection = array();
 
     /**
      * @var int
@@ -57,7 +57,7 @@ class Subject
      * @return bool
      * @throws \enshrined\svgSanitize\Exceptions\NestingException
      */
-    public function hasInfiniteLoop(array $subjects = [], $level = 1)
+    public function hasInfiniteLoop(array $subjects = array(), $level = 1)
     {
         if ($level > $this->useNestingLimit) {
             throw new \enshrined\svgSanitize\Exceptions\NestingException('Nesting level too high, aborting', 1570713498, null, $this->getElement());
@@ -145,8 +145,8 @@ class Subject
             return $usage->getSubject()->getElement();
         }, $this->useCollection);
 
-        $this->usedInCollection = [];
-        $this->useCollection = [];
+        $this->usedInCollection = array();
+        $this->useCollection = array();
 
         return $elements;
     }

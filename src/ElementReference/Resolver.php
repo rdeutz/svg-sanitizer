@@ -15,12 +15,12 @@ class Resolver
     /**
      * @var Subject[]
      */
-    protected $subjects = [];
+    protected $subjects = array();
 
     /**
      * @var array DOMElement[]
      */
-    protected $elementsToRemove = [];
+    protected $elementsToRemove = array();
 
     /**
      * @var int
